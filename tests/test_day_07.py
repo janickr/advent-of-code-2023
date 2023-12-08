@@ -1,7 +1,7 @@
 import day_07
 
 
-class TestDay06:
+class TestDay07:
 
     def test_example_part1(self):
         assert day_07.total_winnings((l for l in ('''32T3K 765
