@@ -44,6 +44,9 @@ def normal_path_length(network, path):
 def ghost_path_length(network, path):
     starting_nodes = [name for name, node in network.items() if name[2] == 'A']
     paths = [normal_path_length_from(network, path, name, lambda current: current[2] == 'Z') for name in starting_nodes]
+    # lcm is wrong for the general case, but works with this specific input
+    # each path only passes 1 node ending in 'Z', path length to the single z node is divisible by the length of the
+    # given path, the length of the loop is divisible by the the length of this path to the first Z node.
     return math.lcm(*paths)
 
 
